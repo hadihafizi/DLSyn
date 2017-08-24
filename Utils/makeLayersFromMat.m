@@ -81,9 +81,9 @@ for ii=1:100
         penalty = sum(adj_mat(nextLay, mvL1))';
         LNextScore(mvL1) = LNextScore(mvL1)-penalty;
         mvL = (lscores(:,2) < LNextScore);
-%         if ~any(mvL) && any(mvL1) %no movers after penalty
-%             lscores(lscores(:,1)<currLay) = lscores(lscores(:,1)<currLay);
-%         end
+        %         if ~any(mvL) && any(mvL1) %no movers after penalty
+        %             lscores(lscores(:,1)<currLay) = lscores(lscores(:,1)<currLay);
+        %         end
         
         lscores(mvL,2) = LNextScore(mvL);
         lscores(mvL,1) = currLay-1;
